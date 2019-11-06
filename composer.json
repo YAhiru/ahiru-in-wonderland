@@ -11,7 +11,8 @@
         "bear/qatools": "^1.9",
         "josegonzalez/dotenv": "^3.2",
         "roave/security-advisories": "dev-master",
-        "infection/infection": "^0.14.2"
+        "infection/infection": "^0.14.2",
+        "brainmaestro/composer-git-hooks": "^2.8"
     },
     "autoload": {
         "psr-4": {
@@ -26,10 +27,12 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@setup"
+            "@setup",
+            "cghooks add --ignore-lock"
         ],
         "post-update-cmd": [
-            "@setup"
+            "@setup",
+            "cghooks update"
         ],
         "setup": [
             "php bin/setup.php"
@@ -75,5 +78,18 @@
     },
     "config": {
         "process-timeout": 0
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "./vendor/bin/php-cs-fixer fix -v --dry-run",
+                "./vendor/bin/phpcs --standard=phpcs.xml src wonderland;"
+            ],
+            "pre-push": [
+                "./vendor/bin/php-cs-fixer fix -v --dry-run",
+                "./vendor/bin/phpcs --standard=phpcs.xml src wonderland;",
+                "./vendor/bin/phpstan analyse -l max src tests -c phpstan.neon --no-progress"
+            ]
+        }
     }
 }
