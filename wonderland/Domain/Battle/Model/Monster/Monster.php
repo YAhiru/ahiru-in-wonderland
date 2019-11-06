@@ -1,5 +1,10 @@
 <?php
 declare(strict_types=1);
+
+
+
+
+
 namespace Wonderland\Domain\Battle\Model\Monster;
 
 final class Monster
