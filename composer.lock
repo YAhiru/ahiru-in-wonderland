@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5f702bd2966a5266de63d8951f13b43",
+    "content-hash": "d9a9d7b6a6f3e8fd95c62eac60b81f1c",
     "packages": [
         {
             "name": "aura/cli",
@@ -2148,16 +2148,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.15.3",
+            "version": "v2.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "705490b0f282f21017d73561e9498d2b622ee34c"
+                "reference": "ceaff36bee1ed3f1bbbedca36d2528c0826c336d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/705490b0f282f21017d73561e9498d2b622ee34c",
-                "reference": "705490b0f282f21017d73561e9498d2b622ee34c",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/ceaff36bee1ed3f1bbbedca36d2528c0826c336d",
+                "reference": "ceaff36bee1ed3f1bbbedca36d2528c0826c336d",
                 "shasum": ""
             },
             "require": {
@@ -2233,7 +2233,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2019-08-31T12:51:54+00:00"
+            "time": "2019-11-03T13:31:09+00:00"
         },
         {
             "name": "infection/infection",
@@ -3397,16 +3397,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.4.2",
+            "version": "8.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a142a7e66c0ea7b5b6c04ee27f08d10d1137cd9b"
+                "reference": "67f9e35bffc0dd52d55d565ddbe4230454fd6a4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a142a7e66c0ea7b5b6c04ee27f08d10d1137cd9b",
-                "reference": "a142a7e66c0ea7b5b6c04ee27f08d10d1137cd9b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/67f9e35bffc0dd52d55d565ddbe4230454fd6a4e",
+                "reference": "67f9e35bffc0dd52d55d565ddbe4230454fd6a4e",
                 "shasum": ""
             },
             "require": {
@@ -3476,7 +3476,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-10-28T10:39:51+00:00"
+            "time": "2019-11-06T09:42:23+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -5645,16 +5645,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "3.6.2",
+            "version": "3.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "05ace258176795e87ef07b4262b5ceba3fd27de3"
+                "reference": "d8ae33957d5806263b8192538e35a8c5f52668c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/05ace258176795e87ef07b4262b5ceba3fd27de3",
-                "reference": "05ace258176795e87ef07b4262b5ceba3fd27de3",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/d8ae33957d5806263b8192538e35a8c5f52668c9",
+                "reference": "d8ae33957d5806263b8192538e35a8c5f52668c9",
                 "shasum": ""
             },
             "require": {
@@ -5729,7 +5729,7 @@
                 "inspection",
                 "php"
             ],
-            "time": "2019-10-20T20:19:01+00:00"
+            "time": "2019-11-04T20:14:07+00:00"
         },
         {
             "name": "webmozart/glob",
