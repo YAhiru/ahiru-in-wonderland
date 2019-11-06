@@ -41,7 +41,7 @@
         "tests": [
             "@cs",
             "phpmd src,tests text ./phpmd.xml",
-            "phpstan analyse -l max src tests -c phpstan.neon --no-progress",
+            "@stan",
             "@test"
         ],
         "coverage": [
@@ -56,6 +56,7 @@
             "phpcbf src tests"
         ],
         "ifc": "infection --threads=4 --filter=$(git diff origin/master --diff-filter=AM --name-only | grep src/ | paste -sd \",\" -) --ignore-msi-with-no-mutations",
+        "stan": "phpstan analyse -l max src tests -c phpstan.neon --no-progress",
         "serve": "php -dzend_extension=xdebug.so -S 127.0.0.1:8080 -t public",
         "app": "php bin/app.php",
         "page": "php bin/page.php"
