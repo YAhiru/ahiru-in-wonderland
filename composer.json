@@ -16,7 +16,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "Wonderland": "wonderland/"
+            "Wonderland\\": "wonderland/"
         }
     },
     "autoload-dev": {
