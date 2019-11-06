@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
-
-namespace Wonderland\Domain\Breeding\Model\Monster;
+namespace wonderland\Domain\Breeding\Model\Monster;
 
 final class Monster
 {
