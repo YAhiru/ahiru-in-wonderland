@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace wonderland\Application\UseCase\Battle\Attack;
+namespace Wonderland\Application\UseCase\Battle\Attack;
 
 final class Attack
 {

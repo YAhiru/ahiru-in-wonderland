@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace wonderland\Domain\Battle\Model\Monster;
+namespace Wonderland\Domain\Battle\Model\Monster;
 
 final class Monster
 {
