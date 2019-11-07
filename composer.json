@@ -48,10 +48,10 @@
             "@test"
         ],
         "coverage": [
-            "php -dzend_extension=xdebug.so phpunit --coverage-text --coverage-html=build/coverage"
+            "php -dzend_extension=xdebug.so ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage"
         ],
         "coverage:pcov": [
-            "php -dextension=pcov.so -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~(.github|bin|vendor|public|tests|var)~\" phpunit --coverage-text --coverage-html=build/coverage"
+            "php -dextension=pcov.so -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~(.github|bin|vendor|public|tests|var)~\" ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage"
         ],
         "md": "phpmd src,wonderland,tests text ./phpmd.xml",
         "cs": [
