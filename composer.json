@@ -43,13 +43,17 @@
         ],
         "tests": [
             "@cs",
-            "phpmd src,tests text ./phpmd.xml",
+            "@md",
             "@stan",
             "@test"
         ],
         "coverage": [
             "php -dzend_extension=xdebug.so phpunit --coverage-text --coverage-html=build/coverage"
         ],
+        "coverage:pcov": [
+            "php -dextension=pcov.so -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~(.github|bin|vendor|public|tests|var)~\" phpunit --coverage-text --coverage-html=build/coverage"
+        ],
+        "md": "phpmd src,wonderland,tests text ./phpmd.xml",
         "cs": [
             "php-cs-fixer fix -v --dry-run",
             "phpcs --standard=phpcs.xml src wonderland;"
@@ -58,7 +62,7 @@
             "php-cs-fixer fix -v",
             "phpcbf src wonderland tests"
         ],
-        "ifc": "infection --threads=4 --filter=$(git diff origin/master --diff-filter=AM --name-only | grep src/ | paste -sd \",\" -) --ignore-msi-with-no-mutations",
+        "ifc": "infection --threads=4 --filter=$(git diff origin/master --diff-filter=AM --name-only | grep src/ | paste -sd \",\" -) --ignore-msi-with-no-mutations --min-msi=80",
         "stan": "phpstan analyse -l max src tests -c phpstan.neon --no-progress",
         "serve": "php -dzend_extension=xdebug.so -S 127.0.0.1:8080 -t public",
         "app": "php bin/app.php",
