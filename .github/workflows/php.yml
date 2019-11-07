@@ -17,7 +17,6 @@ jobs:
       uses: shivammathur/setup-php@master
       with:
         php-version: 7.3
-        ini-values-csv: pcov.directory=., pcov.exclude="~(.github|bin|vendor|public|tests|var)~"
         extension-csv: mbstring, pcov
         coverage: pcov
 
@@ -49,7 +48,7 @@ jobs:
       run: composer ifc
 
     - name: Run test
-      run: php -dpcov.enabled=1 ./vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage
+      run: php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude="~(.github|bin|vendor|public|tests|var)~" ./vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage
 
     - name: Send Coverage
       run: php vendor/bin/codacycoverage clover build/coverage
