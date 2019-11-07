@@ -15,6 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/resource" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/streamer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/sunday" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codacy/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -23,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/felixfbecker/advanced-json-rpc" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/felixfbecker/language-server-protocol" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/gitonomy/gitlib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/infection/infection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/josegonzalez/dotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />

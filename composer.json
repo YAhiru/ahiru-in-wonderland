@@ -12,7 +12,8 @@
         "josegonzalez/dotenv": "^3.2",
         "roave/security-advisories": "dev-master",
         "infection/infection": "^0.14.2",
-        "brainmaestro/composer-git-hooks": "^2.8"
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "codacy/coverage": "dev-master"
     },
     "autoload": {
         "psr-4": {
