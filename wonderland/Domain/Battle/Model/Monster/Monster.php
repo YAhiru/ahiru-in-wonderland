@@ -6,13 +6,15 @@ final class Monster
 {
     private $name;
     private $level;
-    private $hp;
-    private $mp;
-    private $attack;
-    private $defense;
-    private $intelligence;
-    private $wildness;
-    private $agility;
-    private $personality;
+    /** @var Abilities */
+    private $abilities;
     private $skills;
+
+    public function __construct($name, $level, Abilities $abilities, $skills)
+    {
+        $this->name = $name;
+        $this->level = $level;
+        $this->abilities = $abilities;
+        $this->skills = $skills;
+    }
 }

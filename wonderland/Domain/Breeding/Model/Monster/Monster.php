@@ -7,4 +7,11 @@ final class Monster
     private $name;
     private $type;
     private $sex;
+
+    public function __construct($name, $type, $sex)
+    {
+        $this->name = $name;
+        $this->type = $type;
+        $this->sex = $sex;
+    }
 }
