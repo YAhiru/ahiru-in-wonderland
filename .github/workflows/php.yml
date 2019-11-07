@@ -48,7 +48,7 @@ jobs:
       run: composer ifc
 
     - name: Run test
-      run: php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude="~(.github|bin|vendor|public|tests|var)~" ./vendor/bin/phpunit --coverage-xml --coverage-html=build/coverage
+      run: php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude="~(.github|bin|vendor|public|tests|var)~" ./vendor/bin/phpunit --coverage-xml=build/coverage
 
     - name: Send Coverage
       run: php vendor/bin/codacycoverage phpunit build/coverage
