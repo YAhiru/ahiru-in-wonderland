@@ -8,13 +8,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@master
+      with:
+        php-version: 7.3
+        extension-csv: mbstring, pcov
+        coverage: pcov
+
+    - name: Check PHP Version
+      run: php -v
+
+    - name: Check Composer Version
+      run: composer -V
+
+    - name: Check PHP Extensions
+      run: php -m
 
     - name: Validate composer.json and composer.lock
       run: composer validate
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
 
-    - name: Run test suite
-      run: composer tests 
+    - name: Run CS
+      run: composer cs
+
+    - name: Run PHPMD
+      run: composer md
+
+    - name: Run PHPStan
+      run: composer stan
+
+    - name: Run Infection
+      run: composer ifc
+
+    - name: Run test
+      run: composer coverage:pcov
