@@ -64,7 +64,7 @@
             "phpcbf src wonderland tests"
         ],
         "ifc": "infection --threads=4 --filter=$(git diff origin/master --diff-filter=AM --name-only | grep src/ | paste -sd \",\" -) --ignore-msi-with-no-mutations --min-msi=80",
-        "stan": "phpstan analyse -l max src tests -c phpstan.neon --no-progress",
+        "stan": "phpstan analyse -l max src wonderland tests -c phpstan.neon --no-progress",
         "serve": "php -dzend_extension=xdebug.so -S 127.0.0.1:8080 -t public",
         "app": "php bin/app.php",
         "page": "php bin/page.php"
@@ -93,7 +93,7 @@
             "pre-push": [
                 "./vendor/bin/php-cs-fixer fix -v --dry-run",
                 "./vendor/bin/phpcs --standard=phpcs.xml src wonderland;",
-                "./vendor/bin/phpstan analyse -l max src tests -c phpstan.neon --no-progress"
+                "./vendor/bin/phpstan analyse -l max src wonderland tests -c phpstan.neon --no-progress"
             ]
         }
     }

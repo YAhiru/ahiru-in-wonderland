@@ -119,6 +119,6 @@ return \PhpCsFixer\Config::create()
     ->setUsingCache(true)
     ->setFinder(
         PhpCsFixer\Finder::create()
-            ->exclude('var')
+            ->exclude(['var', 'vendor'])
             ->in(__DIR__)
     );
