@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b37344244836ced23120bff8b028ba96",
+    "content-hash": "1a1ec95855931deb708d35974c42189f",
     "packages": [
         {
             "name": "aura/cli",
@@ -2279,6 +2279,56 @@
             ],
             "description": "A tool to automatically fix PHP code style",
             "time": "2019-11-03T13:31:09+00:00"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2018-07-12T10:23:15+00:00"
         },
         {
             "name": "gitonomy/gitlib",
@@ -5924,6 +5974,51 @@
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
             "time": "2015-12-17T08:42:14+00:00"
+        },
+        {
+            "name": "yahiru/entity-factory",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/YAhiru/entity-factory.git",
+                "reference": "c3b12c79cd6ebab55d97e6dd197c48db48475dd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/YAhiru/entity-factory/zipball/c3b12c79cd6ebab55d97e6dd197c48db48475dd9",
+                "reference": "c3b12c79cd6ebab55d97e6dd197c48db48475dd9",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "^1.8",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.26.1",
+                "friendsofphp/php-cs-fixer": "^2.15",
+                "infection/infection": "^0.13.6",
+                "phpstan/phpstan": "^0.11.4",
+                "phpunit/phpunit": "^8.0",
+                "symfony/var-dumper": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yahiru\\EntityFactory\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yuhei yoshida",
+                    "email": "yahiru1121@gmail.com"
+                }
+            ],
+            "description": "Create entities",
+            "time": "2019-10-16T08:50:09+00:00"
         }
     ],
     "aliases": [],

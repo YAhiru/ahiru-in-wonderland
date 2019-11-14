@@ -13,7 +13,8 @@
         "roave/security-advisories": "dev-master",
         "infection/infection": "^0.14.2",
         "brainmaestro/composer-git-hooks": "^2.8",
-        "codacy/coverage": "dev-master"
+        "codacy/coverage": "dev-master",
+        "yahiru/entity-factory": "^2.0"
     },
     "autoload": {
         "psr-4": {
