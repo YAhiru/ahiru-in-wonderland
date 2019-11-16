@@ -62,9 +62,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ray/aop" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ray/compiler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ray/di" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ray/identity-value-module" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ray/web-param-module" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rize/uri-template" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
