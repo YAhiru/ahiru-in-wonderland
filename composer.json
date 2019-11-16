@@ -9,13 +9,17 @@
         "ray/identity-value-module": "^0.2.0"
     },
     "require-dev": {
-        "bear/qatools": "^1.9",
         "josegonzalez/dotenv": "^3.2",
         "roave/security-advisories": "dev-master",
         "infection/infection": "^0.14.2",
         "brainmaestro/composer-git-hooks": "^2.8",
         "codacy/coverage": "dev-master",
-        "yahiru/entity-factory": "^2.0"
+        "yahiru/entity-factory": "^2.0",
+        "phpmd/phpmd": "^2.7",
+        "phpstan/phpstan-shim": "^0.11.19",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit": "^8.4"
     },
     "autoload": {
         "psr-4": {
