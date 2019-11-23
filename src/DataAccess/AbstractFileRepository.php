@@ -24,6 +24,12 @@ abstract class AbstractFileRepository
         }
     }
 
+    public function clear() : void
+    {
+        unlink($this->storePath);
+        $this->initialize();
+    }
+
     protected function unserialize() : array
     {
         $serialized = file_get_contents($this->storePath);
