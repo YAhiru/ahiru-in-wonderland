@@ -11,7 +11,10 @@ use Wonderland\Domain\Model\ConstructException;
 
 final class GateTest extends TestCase
 {
-    public function testCanMakeEnemy()
+    /**
+     * @testdox 正常系
+     */
+    public function testMakeEnemies()
     {
         $monster = EncountableMonsterFactory::start()->floorRange(1, 3)->make([
             'name' => 'enemy1',
@@ -30,9 +33,9 @@ final class GateTest extends TestCase
     }
 
     /**
-     * @test
+     * @testdox 該当する階以外の敵モンスターは取得しない
      */
-    public function 該当する階以外の敵モンスターは取得しない()
+    public function testMakeEnemies2()
     {
         $monster = EncountableMonsterFactory::start()->floorRange(1, 3)->make([
             'name' => 'enemy1',
@@ -55,9 +58,9 @@ final class GateTest extends TestCase
     }
 
     /**
-     * @test
+     * @testdox 該当する階のモンスターがいなければ例外
      */
-    public function 該当する階のモンスターがいなければ例外()
+    public function testMakeEnemies3()
     {
         $gate = GateFactory::start()->make([
             'encountableMonsters' => EncountableMonsters::make(
@@ -70,9 +73,9 @@ final class GateTest extends TestCase
     }
 
     /**
-     * @test
+     * @testdox エンカウント出来るモンスターは1〜3匹まで
      */
-    public function エンカウント出来るモンスターは1〜3匹まで()
+    public function testMakeEnemies4()
     {
         $gate = GateFactory::start()->make([
             'encountableMonsters' => EncountableMonsters::make(
