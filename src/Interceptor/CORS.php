@@ -11,10 +11,6 @@ class CORS implements MethodInterceptor
 {
     public function invoke(MethodInvocation $invocation)
     {
-        if (PHP_SAPI === 'cli') {
-            return $invocation->proceed();
-        }
-
         /** @var ResourceObject $resource */
         $resource = $invocation->proceed();
         $resource->headers[ResponseHeader::ACCESS_CONTROL_ALLOW_ORIGIN] = 'http://localhost:3000';
