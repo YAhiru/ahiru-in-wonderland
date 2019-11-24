@@ -20,7 +20,7 @@ final class Player
         $this->monsters = $monsters;
     }
 
-    public function encounter(BattleId $battleId, Enemies $enemies) : Battle
+    public function encounter(Enemies $enemies, BattleId $battleId) : Battle
     {
         return new Battle(
             $battleId,
