@@ -5,6 +5,9 @@ namespace App\DataAccess;
 use BEAR\AppMeta\AbstractAppMeta;
 use Ray\IdentityValueModule\UuidInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 abstract class AbstractFileRepository
 {
     /** @var string */

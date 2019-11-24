@@ -7,6 +7,9 @@ use Wonderland\Domain\Adventure\Model\Gate\GateId;
 use Wonderland\Domain\Adventure\Model\Gate\GateNotFoundException;
 use Wonderland\Domain\Adventure\Model\Gate\GateRepository;
 
+/**
+ * @codeCoverageIgnore
+ */
 class FileGateRepository extends AbstractFileRepository implements GateRepository
 {
     public function create(Gate $gate) : void

@@ -7,6 +7,9 @@ use Wonderland\Domain\Adventure\Model\Battle\BattleId;
 use Wonderland\Domain\Adventure\Model\Battle\BattleNotFoundException;
 use Wonderland\Domain\Adventure\Model\Battle\BattleRepository;
 
+/**
+ * @codeCoverageIgnore
+ */
 class FileBattleRepository extends AbstractFileRepository implements BattleRepository
 {
     public function nextId() : BattleId
