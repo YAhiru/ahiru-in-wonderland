@@ -12,7 +12,7 @@ class FileGateRepository extends AbstractFileRepository implements GateRepositor
     public function create(Gate $gate) : void
     {
         $data = $this->unserialize();
-        $data[$gate->getGateId()->value()] = $gate;
+        $data[$gate->getId()->value()] = $gate;
         $this->serialize($data);
     }
 

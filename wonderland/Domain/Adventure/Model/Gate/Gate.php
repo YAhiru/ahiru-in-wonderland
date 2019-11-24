@@ -7,22 +7,22 @@ use Wonderland\Domain\Adventure\Model\Battle\Enemies;
 final class Gate
 {
     /** @var GateId */
-    private $gateId;
+    private $id;
     /** @var EncountableMonsters */
     private $encountableMonsters;
     /** @var int */
     private $topFloor;
 
-    public function __construct(GateId $gateId, EncountableMonsters $encountableMonsters, int $topFloor)
+    public function __construct(GateId $id, EncountableMonsters $encountableMonsters, int $topFloor)
     {
-        $this->gateId = $gateId;
+        $this->id = $id;
         $this->encountableMonsters = $encountableMonsters;
         $this->topFloor = $topFloor;
     }
 
-    public function getGateId() : GateId
+    public function getId() : GateId
     {
-        return $this->gateId;
+        return $this->id;
     }
 
     public function makeEnemies() : Enemies

@@ -17,7 +17,7 @@ class FileBattleRepository extends AbstractFileRepository implements BattleRepos
     public function create(Battle $battle) : void
     {
         $data = $this->unserialize();
-        $data[$battle->getBattleId()->value()] = $battle;
+        $data[$battle->getId()->value()] = $battle;
         $this->serialize($data);
     }
 

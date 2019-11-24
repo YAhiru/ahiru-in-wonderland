@@ -29,6 +29,6 @@ final class EncounterInteractor
         $battle = $player->encounter($battleId, $gate->makeEnemies());
         $this->battleRepository->create($battle);
 
-        return new Output($battle->getBattleId());
+        return new Output($battle->getId());
     }
 }

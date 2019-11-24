@@ -10,13 +10,13 @@ use Wonderland\Domain\Adventure\Model\Monster\Monsters;
 final class Player
 {
     /** @var PlayerId */
-    private $playerId;
+    private $id;
     /** @var Monsters */
     private $monsters;
 
-    public function __construct(PlayerId $playerId, Monsters $monsters)
+    public function __construct(PlayerId $id, Monsters $monsters)
     {
-        $this->playerId = $playerId;
+        $this->id = $id;
         $this->monsters = $monsters;
     }
 
@@ -24,7 +24,7 @@ final class Player
     {
         return new Battle(
             $battleId,
-            $this->playerId,
+            $this->id,
             $this->monsters,
             $enemies
         );

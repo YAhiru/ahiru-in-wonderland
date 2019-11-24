@@ -8,7 +8,7 @@ use Wonderland\Domain\Model\Player\PlayerId;
 final class Battle
 {
     /** @var BattleId */
-    private $battleId;
+    private $id;
     /** @var PlayerId */
     private $playerId;
     /** @var Monsters */
@@ -16,17 +16,17 @@ final class Battle
     /** @var Enemies */
     private $enemies;
 
-    public function __construct(BattleId $battleId, PlayerId $playerId, Monsters $monsters, Enemies $enemies)
+    public function __construct(BattleId $id, PlayerId $playerId, Monsters $monsters, Enemies $enemies)
     {
-        $this->battleId = $battleId;
+        $this->id = $id;
         $this->playerId = $playerId;
         $this->monsters = $monsters;
         $this->enemies = $enemies;
     }
 
-    public function getBattleId() : BattleId
+    public function getId() : BattleId
     {
-        return $this->battleId;
+        return $this->id;
     }
 
     public function getPlayerId() : PlayerId
