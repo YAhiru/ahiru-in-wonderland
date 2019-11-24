@@ -6,6 +6,7 @@ use Faker\Generator as Faker;
 use Test\Helper\Factory\AbstractFactory;
 use Wonderland\Domain\Adventure\Model\Gate\EncountableMonsters;
 use Wonderland\Domain\Adventure\Model\Gate\Gate;
+use Wonderland\Domain\Adventure\Model\Gate\GateId;
 
 /**
  * @method Gate make(array $attributes = [])
@@ -23,6 +24,7 @@ final class GateFactory extends AbstractFactory
     protected function default(Faker $faker) : array
     {
         return [
+            'id' => GateId::of($faker->uuid),
             'encountableMonsters' => new EncountableMonsters(),
             'topFloor' => $faker->randomDigit,
         ];

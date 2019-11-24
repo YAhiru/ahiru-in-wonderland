@@ -13,8 +13,10 @@ use Wonderland\Domain\Adventure\Model\Battle\BattleId;
 use Wonderland\Domain\Adventure\Model\Battle\BattleRepository;
 use Wonderland\Domain\Adventure\Model\Gate\GateId;
 use Wonderland\Domain\Adventure\Model\Monster\HitPoint;
+use Wonderland\Domain\Adventure\Model\Monster\Level;
 use Wonderland\Domain\Adventure\Model\Monster\MagicPoint;
 use Wonderland\Domain\Adventure\Model\Monster\Monster;
+use Wonderland\Domain\Adventure\Model\Monster\MonsterId;
 use Wonderland\Domain\Adventure\Model\Monster\Monsters;
 use Wonderland\Domain\Model\Player\Player;
 use Wonderland\Domain\Model\Player\PlayerId;
@@ -44,7 +46,12 @@ class Battle extends ResourceObject
      */
     public function onPost() : ResourceObject
     {
-        $player = new Player(PlayerId::of('1'), Monsters::create(new Monster('1', 'monster1', 10, new HitPoint(100, 100), new MagicPoint(100, 100))));
+        $player = new Player(
+            PlayerId::of('1'),
+            Monsters::create(
+                new Monster(MonsterId::of('1'), 'monster1', Level::of(10), HitPoint::of(100, 100), MagicPoint::of(100, 100))
+            )
+        );
         $input = new Input($player, GateId::of('1'), 1);
         $output = $this->postUseCase->run($input);
 

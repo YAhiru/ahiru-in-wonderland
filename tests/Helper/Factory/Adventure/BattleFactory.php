@@ -5,6 +5,7 @@ namespace Test\Helper\Factory\Adventure;
 use Faker\Generator as Faker;
 use Test\Helper\Factory\AbstractFactory;
 use Wonderland\Domain\Adventure\Model\Battle\Battle;
+use Wonderland\Domain\Adventure\Model\Battle\BattleId;
 use Wonderland\Domain\Adventure\Model\Battle\Enemies;
 
 /**
@@ -23,7 +24,7 @@ final class BattleFactory extends AbstractFactory
     protected function default(Faker $faker) : array
     {
         return [
-            'battleId' => $faker->uuid,
+            'id' => BattleId::of($faker->uuid),
             'enemies' => Enemies::create(
                 MonsterFactory::start()->make()
             )

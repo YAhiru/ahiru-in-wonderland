@@ -31,8 +31,8 @@ final class Monsters extends AbstractCollection
                 'id' => $monster->getId(),
                 'level' => $monster->getLevel(),
                 'name' => $monster->getName(),
-                'hp' => $monster->getHp(),
-                'mp' => $monster->getMp(),
+                'hp' => $monster->getCurrentHitPoint(),
+                'mp' => $monster->getCurrentMagicPoint(),
             ];
         }
 

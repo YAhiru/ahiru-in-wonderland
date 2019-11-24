@@ -4,52 +4,48 @@ namespace Wonderland\Domain\Adventure\Model\Monster;
 
 final class Monster
 {
+    /** @var MonsterId */
     private $id;
+    /** @var string */
     private $name;
+    /** @var Level */
     private $level;
-    private $hp;
-    private $mp;
+    /** @var HitPoint */
+    private $hitPoint;
+    /** @var MagicPoint */
+    private $magicPoint;
 
-    public function __construct($id, $name, $level, HitPoint $hp, MagicPoint $mp)
+    public function __construct(MonsterId $id, string $name, Level $level, HitPoint $hitPoint, MagicPoint $magicPoint)
     {
         $this->id = $id;
         $this->name = $name;
         $this->level = $level;
-        $this->hp = $hp;
-        $this->mp = $mp;
+        $this->hitPoint = $hitPoint;
+        $this->magicPoint = $magicPoint;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId() : MonsterId
     {
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLevel()
+    public function getLevel() : Level
     {
         return $this->level;
     }
 
-    public function getHp()
+    public function getCurrentHitPoint() : int
     {
-        return $this->hp->getCurrent();
+        return $this->hitPoint->getCurrent();
     }
 
-    public function getMp()
+    public function getCurrentMagicPoint() : int
     {
-        return $this->mp->getCurrent();
+        return $this->magicPoint->getCurrent();
     }
 }
