@@ -2,16 +2,15 @@
 declare(strict_types=1);
 namespace Wonderland\Domain\Adventure\Model\Battle;
 
-use Wonderland\Domain\Adventure\Model\Monster\Monster;
 use Wonderland\Domain\Model\AbstractCollection;
 use Wonderland\Domain\Model\ConstructException;
 
 final class Enemies extends AbstractCollection
 {
-    /** @var Monster[] */
+    /** @var Enemy[] */
     protected $items;
 
-    public static function create(Monster ...$enemies) : self
+    public static function create(Enemy ...$enemies) : self
     {
         $count = count($enemies);
         if ($count > 3 || $count === 0) {
@@ -26,15 +25,14 @@ final class Enemies extends AbstractCollection
      */
     public function toArray() : array
     {
-        $monsters = [];
-        foreach ($this->items as $monster) {
-            $monsters[] = [
-                'id' => $monster->getId()->getValue(),
-                'level' => $monster->getLevel()->getValue(),
-                'name' => $monster->getName(),
+        $enemies = [];
+        foreach ($this->items as $enemy) {
+            $enemies[] = [
+                'level' => $enemy->getLevel()->getValue(),
+                'name' => $enemy->getName(),
             ];
         }
 
-        return $monsters;
+        return $enemies;
     }
 }

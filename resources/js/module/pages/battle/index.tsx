@@ -24,14 +24,14 @@ const BattlePage: FC = () => {
       <h3>id: {battle.id}</h3>
       <h3>Enemies</h3>
       <ul>
-        {battle.enemies.map(enemy => (
-          <li>{enemy.name}</li>
+        {battle.enemies.map((enemy, idx) => (
+          <li key={idx}>{enemy.name}</li>
         ))}
       </ul>
       <h3>Monsters</h3>
       <ul>
         {battle.monsters.map(monster => (
-          <li>
+          <li key={monster.id}>
             {monster.name} HP:{monster.hp} MP: {monster.mp}
           </li>
         ))}

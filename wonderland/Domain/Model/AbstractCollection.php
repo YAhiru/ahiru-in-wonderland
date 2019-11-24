@@ -26,4 +26,19 @@ abstract class AbstractCollection implements Collection
     {
         return count($this->items);
     }
+
+    /**
+     * @param callable $callable
+     *
+     * @return static
+     */
+    protected function filter(callable $callable) : self
+    {
+        return new static(array_filter($this->items, $callable));
+    }
+
+    protected function map(callable $callable) : array
+    {
+        return array_map($callable, $this->items);
+    }
 }

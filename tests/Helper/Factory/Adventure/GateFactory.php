@@ -4,7 +4,11 @@ namespace Test\Helper\Factory\Adventure;
 
 use Faker\Generator as Faker;
 use Test\Helper\Factory\AbstractFactory;
-use Wonderland\Domain\Adventure\Model\Gate\EncountableMonsters;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonster;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonsterId;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonsters;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\FloorRange;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\LevelRange;
 use Wonderland\Domain\Adventure\Model\Gate\Gate;
 use Wonderland\Domain\Adventure\Model\Gate\GateId;
 
@@ -23,10 +27,19 @@ final class GateFactory extends AbstractFactory
 
     protected function default(Faker $faker) : array
     {
+        $topFloor = $faker->numberBetween(1, 25);
+
         return [
             'id' => GateId::of($faker->uuid),
-            'encountableMonsters' => new EncountableMonsters(),
-            'topFloor' => $faker->numberBetween(1, 25),
+            'encountableMonsters' => EncountableMonsters::make(
+                new EncountableMonster(
+                    EncountableMonsterId::of($faker->uuid),
+                    $faker->name,
+                    FloorRange::create(1, $topFloor),
+                    LevelRange::create(1, 10)
+                )
+            ),
+            'topFloor' => $topFloor,
         ];
     }
 }

@@ -3,6 +3,8 @@ declare(strict_types=1);
 namespace Wonderland\Domain\Adventure\Model\Gate;
 
 use Wonderland\Domain\Adventure\Model\Battle\Enemies;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\EmptyEncountException;
+use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonsters;
 
 final class Gate
 {
@@ -25,8 +27,19 @@ final class Gate
         return $this->id;
     }
 
-    public function makeEnemies() : Enemies
+    public function makeEnemies(int $targetFloor, int $count) : Enemies
     {
-        return $this->encountableMonsters->encount();
+        $encountables = $this->encountableMonsters->filterTargetFloor($targetFloor);
+        if ($encountables->isEmpty()) {
+            throw new EmptyEncountException('Monster does not exists in the floor. floor: ' . $targetFloor);
+        }
+
+        $ids = $encountables->getIds();
+        $enemies = [];
+        while ($count--) {
+            $enemies[] = $encountables->createEnemy($ids[array_rand($ids)]);
+        }
+
+        return Enemies::create(...$enemies);
     }
 }

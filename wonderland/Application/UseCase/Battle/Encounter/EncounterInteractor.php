@@ -26,7 +26,7 @@ final class EncounterInteractor
         $battleId = $this->battleRepository->nextId();
         $gate = $this->gateRepository->find($input->getGateId());
 
-        $enemies = $gate->makeEnemies();
+        $enemies = $gate->makeEnemies($input->getFloor(), random_int(1, 3));
         $battle = $player->encounter($enemies, $battleId);
         $this->battleRepository->create($battle);
 

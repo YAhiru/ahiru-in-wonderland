@@ -1,10 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Wonderland\Domain\Adventure\Model\Gate;
+namespace Wonderland\Domain\Adventure\Model\Gate\Encountable;
 
+use Wonderland\Domain\Adventure\Model\Monster\Level;
 use Wonderland\Domain\Model\ConstructException;
 
-final class FloorRange
+final class LevelRange
 {
     /** @var int */
     private $min;
@@ -23,5 +24,15 @@ final class FloorRange
     public static function create(int $min, int $max) : self
     {
         return new self($min, $max);
+    }
+
+    /**
+     * @throws \Exception
+     *
+     * @return Level
+     */
+    public function random() : Level
+    {
+        return Level::of(random_int($this->min, $this->max));
     }
 }

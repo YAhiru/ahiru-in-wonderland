@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace Wonderland\Domain\Adventure\Model\Gate;
+namespace Wonderland\Domain\Adventure\Model\Gate\Encountable;
 
 use Wonderland\Domain\Model\ConstructException;
 
-final class LevelRange
+final class FloorRange
 {
     /** @var int */
     private $min;
@@ -23,5 +23,11 @@ final class LevelRange
     public static function create(int $min, int $max) : self
     {
         return new self($min, $max);
+    }
+
+    public function isInclude(int $floor) : bool
+    {
+        return $this->min <= $floor
+            && $this->max >= $floor;
     }
 }
