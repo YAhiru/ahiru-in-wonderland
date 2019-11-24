@@ -17,15 +17,15 @@ class FileBattleRepository extends AbstractFileRepository implements BattleRepos
     public function create(Battle $battle) : void
     {
         $data = $this->unserialize();
-        $data[$battle->getId()->value()] = $battle;
+        $data[$battle->getId()->getValue()] = $battle;
         $this->serialize($data);
     }
 
     public function find(BattleId $id) : Battle
     {
-        $gate = $this->unserialize()[$id->value()];
+        $gate = $this->unserialize()[$id->getValue()];
         if (! $gate) {
-            throw new BattleNotFoundException('Battle not found. given id: ' . $id->value());
+            throw new BattleNotFoundException('Battle not found. given id: ' . $id->getValue());
         }
 
         return $gate;

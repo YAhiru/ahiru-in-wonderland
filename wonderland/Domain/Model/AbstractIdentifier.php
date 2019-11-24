@@ -14,11 +14,11 @@ abstract class AbstractIdentifier implements Identifier
 
     public function equals(Identifier $id) : bool
     {
-        return $this->value() === $id->value()
+        return $this->getValue() === $id->getValue()
             && get_class($this) === get_class($id);
     }
 
-    public function value() : string
+    public function getValue() : string
     {
         return $this->value;
     }

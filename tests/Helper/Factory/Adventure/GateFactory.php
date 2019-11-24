@@ -26,7 +26,7 @@ final class GateFactory extends AbstractFactory
         return [
             'id' => GateId::of($faker->uuid),
             'encountableMonsters' => new EncountableMonsters(),
-            'topFloor' => $faker->randomDigit,
+            'topFloor' => $faker->numberBetween(1, 25),
         ];
     }
 }

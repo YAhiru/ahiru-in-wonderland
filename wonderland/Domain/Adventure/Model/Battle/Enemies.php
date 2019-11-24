@@ -29,8 +29,8 @@ final class Enemies extends AbstractCollection
         $monsters = [];
         foreach ($this->items as $monster) {
             $monsters[] = [
-                'id' => $monster->getId(),
-                'level' => $monster->getLevel(),
+                'id' => $monster->getId()->getValue(),
+                'level' => $monster->getLevel()->getValue(),
                 'name' => $monster->getName(),
             ];
         }

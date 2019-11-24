@@ -12,15 +12,15 @@ class FileGateRepository extends AbstractFileRepository implements GateRepositor
     public function create(Gate $gate) : void
     {
         $data = $this->unserialize();
-        $data[$gate->getId()->value()] = $gate;
+        $data[$gate->getId()->getValue()] = $gate;
         $this->serialize($data);
     }
 
     public function find(GateId $id) : Gate
     {
-        $gate = $this->unserialize()[$id->value()];
+        $gate = $this->unserialize()[$id->getValue()];
         if (! $gate) {
-            throw new GateNotFoundException('Gate not found. given id: ' . $id->value());
+            throw new GateNotFoundException('Gate not found. given id: ' . $id->getValue());
         }
 
         return $gate;

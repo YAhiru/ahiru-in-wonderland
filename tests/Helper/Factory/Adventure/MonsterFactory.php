@@ -28,7 +28,7 @@ final class MonsterFactory extends AbstractFactory
         return [
             'id' => MonsterId::of($faker->uuid),
             'name' => 'testing monster',
-            'level' => Level::of($faker->randomDigit),
+            'level' => Level::of($faker->numberBetween(1, 99)),
             'hitPoint' => HitPoint::of(100, 100),
             'magicPoint' => MagicPoint::of(100, 100),
         ];

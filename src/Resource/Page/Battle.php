@@ -66,7 +66,7 @@ class Battle extends ResourceObject
         $gate = $this->battleRepository->find(BattleId::of($id));
 
         $this->body = [
-            'id' => $gate->getId()->value(),
+            'id' => $gate->getId()->getValue(),
             'enemies' => $gate->getEnemies()->toArray(),
             'monsters' => $gate->getMonsters()->toArray(),
         ];

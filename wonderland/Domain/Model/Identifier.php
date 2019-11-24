@@ -6,5 +6,5 @@ interface Identifier
 {
     public function equals(self $id) : bool;
 
-    public function value() : string;
+    public function getValue() : string;
 }

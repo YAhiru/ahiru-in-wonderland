@@ -21,6 +21,6 @@ final class Output
 
     public function getLocation() : string
     {
-        return '/battle?id=' . $this->getBattleId()->value();
+        return '/battle?id=' . $this->getBattleId()->getValue();
     }
 }
