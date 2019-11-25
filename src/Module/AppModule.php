@@ -4,6 +4,7 @@ namespace App\Module;
 use App\Interceptor\CORS;
 use BEAR\Package\AbstractAppModule;
 use BEAR\Package\PackageModule;
+use BEAR\Resource\ResourceObject;
 use Ray\IdentityValueModule\IdentityValueModule;
 
 class AppModule extends AbstractAppModule
@@ -19,7 +20,7 @@ class AppModule extends AbstractAppModule
         $this->install(new IdentityValueModule());
         $this->install(new AdventureModule());
         $this->bindInterceptor(
-            $this->matcher->any(),
+            $this->matcher->subclassesOf(ResourceObject::class),
             $this->matcher->startsWith('on'),
             [CORS::class]
         );

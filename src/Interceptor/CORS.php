@@ -7,6 +7,9 @@ use Koriym\HttpConstants\ResponseHeader;
 use Ray\Aop\MethodInterceptor;
 use Ray\Aop\MethodInvocation;
 
+/**
+ * @Annotation
+ */
 class CORS implements MethodInterceptor
 {
     public function invoke(MethodInvocation $invocation)

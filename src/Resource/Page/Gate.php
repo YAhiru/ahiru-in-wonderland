@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace App\Resource\Page;
 
-use BEAR\Resource\ResourceObject;
+use App\Resource\ResourceObject;
 use Koriym\HttpConstants\StatusCode;
 use Wonderland\Domain\Adventure\Model\Gate\GateId;
 use Wonderland\Domain\Adventure\Model\Gate\GateRepository;
@@ -38,14 +38,6 @@ class Gate extends ResourceObject
         $this->gateRepository->update($gate);
 
         $this->code = StatusCode::OK;
-
-        return $this;
-    }
-
-    public function onOptions()
-    {
-        $this->headers['Access-Control-Allow-Methods'] = 'PATCH';
-        $this->headers['Access-Control-Allow-Headers'] = 'Content-Type';
 
         return $this;
     }
