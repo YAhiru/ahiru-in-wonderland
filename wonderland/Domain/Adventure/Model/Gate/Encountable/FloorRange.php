@@ -30,4 +30,14 @@ final class FloorRange
         return $this->min <= $floor
             && $this->max >= $floor;
     }
+
+    public function getMin() : int
+    {
+        return $this->min;
+    }
+
+    public function getMax() : int
+    {
+        return $this->max;
+    }
 }

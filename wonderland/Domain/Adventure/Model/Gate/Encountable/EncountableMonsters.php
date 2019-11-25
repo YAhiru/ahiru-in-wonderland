@@ -55,4 +55,27 @@ final class EncountableMonsters extends AbstractCollection
 
         return null;
     }
+
+    /**
+     * @deprecated 消すぞ〜〜〜〜
+     */
+    public function toArray(): array
+    {
+        foreach ($this->items as $monster) {
+            $monsters[] = [
+                'id' => $monster->getId()->getValue(),
+                'name' => $monster->getName(),
+                'floorRange' => [
+                    'max' => $monster->getFloorRange()->getMax(),
+                    'min' => $monster->getFloorRange()->getMin(),
+                ],
+                'levelRange' => [
+                    'max' => $monster->getLevelRange()->getMax(),
+                    'min' => $monster->getLevelRange()->getMin(),
+                ]
+            ];
+        }
+
+        return $monsters ?? [];
+    }
 }

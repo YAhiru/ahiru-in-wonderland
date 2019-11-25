@@ -28,6 +28,7 @@ class Gate extends ResourceObject
     {
         $gate = new \Wonderland\Domain\Adventure\Model\Gate\Gate(
             GateId::of('1'),
+            'gate1',
             EncountableMonsters::make(
                 new EncountableMonster(
                     EncountableMonsterId::of('1'),
@@ -47,8 +48,7 @@ class Gate extends ResourceObject
                     FloorRange::create(1, 10),
                     LevelRange::create(5, 8)
                 )
-            ),
-            10
+            )
         );
 
         $this->gateRepository->create($gate);

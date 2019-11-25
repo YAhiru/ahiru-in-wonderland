@@ -12,19 +12,29 @@ final class Gate
     private $id;
     /** @var EncountableMonsters */
     private $encountableMonsters;
-    /** @var int */
-    private $topFloor;
+    /** @var string */
+    private $name;
 
-    public function __construct(GateId $id, EncountableMonsters $encountableMonsters, int $topFloor)
+    public function __construct(GateId $id, string $name, EncountableMonsters $encountableMonsters)
     {
         $this->id = $id;
+        $this->name = $name;
         $this->encountableMonsters = $encountableMonsters;
-        $this->topFloor = $topFloor;
     }
 
     public function getId() : GateId
     {
         return $this->id;
+    }
+
+    public function getName() : string
+    {
+        return $this->name;
+    }
+
+    public function updateName(string $name) : void
+    {
+        $this->name = $name;
     }
 
     public function makeEnemies(int $targetFloor, int $count) : Enemies
@@ -41,5 +51,17 @@ final class Gate
         }
 
         return Enemies::create(...$enemies);
+    }
+
+    /**
+     * @deprecated 消すぞ〜〜〜〜
+     */
+    public function toArray() : array
+    {
+        return [
+            'id' => $this->getId()->getValue(),
+            'name' => $this->getName(),
+            'encountableMonsters' => $this->encountableMonsters->toArray()
+        ];
     }
 }

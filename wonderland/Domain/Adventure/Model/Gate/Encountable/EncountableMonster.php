@@ -34,6 +34,11 @@ final class EncountableMonster
         return $this->name;
     }
 
+    public function appearedLastFloor() : int
+    {
+        return $this->getFloorRange()->getMax();
+    }
+
     public function getFloorRange() : FloorRange
     {
         return $this->floorRange;

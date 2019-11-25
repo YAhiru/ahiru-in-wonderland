@@ -2,9 +2,14 @@
 declare(strict_types=1);
 namespace Wonderland\Domain\Adventure\Model\Gate;
 
+/**
+ * @uses \App\DataAccess\FileGateRepository
+ */
 interface GateRepository
 {
     public function create(Gate $gate) : void;
+
+    public function update(Gate $gate) : void;
 
     /**
      * @param GateId $id

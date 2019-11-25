@@ -35,4 +35,14 @@ final class LevelRange
     {
         return Level::of(random_int($this->min, $this->max));
     }
+
+    public function getMin() : int
+    {
+        return $this->min;
+    }
+
+    public function getMax() : int
+    {
+        return $this->max;
+    }
 }
