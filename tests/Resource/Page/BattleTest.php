@@ -54,6 +54,7 @@ final class BattleTest extends TestCase
     {
         $resource = $this->resource->get('page://self' . $resource->headers[ResponseHeader::LOCATION]);
 
+        $this->assertSame(200, $resource->code);
         $this->assertIsString($resource->body['id']);
         $this->assertIsArray($resource->body['enemies']);
         $this->assertIsArray($resource->body['monsters']);

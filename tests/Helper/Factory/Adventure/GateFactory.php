@@ -31,6 +31,7 @@ final class GateFactory extends AbstractFactory
 
         return [
             'id' => GateId::of($faker->uuid),
+            'name' => $faker->name,
             'encountableMonsters' => EncountableMonsters::make(
                 new EncountableMonster(
                     EncountableMonsterId::of($faker->uuid),

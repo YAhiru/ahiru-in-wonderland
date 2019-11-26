@@ -23,6 +23,8 @@ class Gate extends ResourceObject
 
     /**
      * TODO: WIP
+     *
+     * @codeCoverageIgnore
      */
     public function onPost()
     {
