@@ -25,6 +25,6 @@
     }
   },
   "testFramework":"phpunit",
-  "initialTestsPhpOptions": "",
+  "initialTestsPhpOptions": "-d zend_extension=xdebug.so",
   "testFrameworkOptions": "-vvv"
 }
