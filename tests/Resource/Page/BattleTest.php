@@ -7,6 +7,9 @@ use BEAR\Resource\ResourceInterface;
 use BEAR\Resource\ResourceObject;
 use Koriym\HttpConstants\ResponseHeader;
 use PHPUnit\Framework\TestCase;
+use Test\Helper\Factory\Adventure\GateFactory;
+use Wonderland\Domain\Adventure\Model\Gate\GateId;
+use Wonderland\Domain\Adventure\Model\Gate\GateRepository;
 
 final class BattleTest extends TestCase
 {
@@ -14,10 +17,14 @@ final class BattleTest extends TestCase
      * @var ResourceInterface
      */
     private $resource;
+    /** @var GateRepository */
+    private $gateRepository;
 
     protected function setUp() : void
     {
-        $this->resource = (new AppInjector('App', 'app'))->getInstance(ResourceInterface::class);
+        $injector = (new AppInjector('App', 'app'));
+        $this->resource = $injector->getInstance(ResourceInterface::class);
+        $this->gateRepository = $injector->getInstance(GateRepository::class);
     }
 
     /**
@@ -26,6 +33,11 @@ final class BattleTest extends TestCase
      */
     public function onPost()
     {
+        $gate = GateFactory::start()->make([
+            'id' => GateId::of('1'),
+        ]);
+        $this->gateRepository->create($gate);
+
         $resource = $this->resource->post('page://self/battle');
 
         $this->assertSame(201, $resource->code);

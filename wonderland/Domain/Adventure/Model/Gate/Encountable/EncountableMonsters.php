@@ -59,7 +59,7 @@ final class EncountableMonsters extends AbstractCollection
     /**
      * @deprecated 消すぞ〜〜〜〜
      */
-    public function toArray(): array
+    public function toArray() : array
     {
         foreach ($this->items as $monster) {
             $monsters[] = [

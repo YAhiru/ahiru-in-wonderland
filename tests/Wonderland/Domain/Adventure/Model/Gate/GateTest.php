@@ -20,7 +20,6 @@ final class GateTest extends TestCase
             'name' => 'enemy1',
         ]);
         $gate = GateFactory::start()->make([
-            'topFloor' => 3,
             'encountableMonsters' => EncountableMonsters::make(
                 $monster
             )
@@ -44,7 +43,6 @@ final class GateTest extends TestCase
             'name' => 'enemy2'
         ]);
         $gate = GateFactory::start()->make([
-            'topFloor' => 6,
             'encountableMonsters' => EncountableMonsters::make(
                 $monster,
                 $monster2

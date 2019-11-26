@@ -39,7 +39,6 @@ final class GateFactory extends AbstractFactory
                     LevelRange::create(1, 10)
                 )
             ),
-            'topFloor' => $topFloor,
         ];
     }
 }
