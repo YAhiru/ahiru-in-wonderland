@@ -6,7 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Test\" />
       <sourceFolder url="file://$MODULE_DIR$/wonderland" isTestSource="false" packagePrefix="Wonderland\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aura/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/aura/router" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/app-meta" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bear/aura-router-module" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/package" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/query-repository" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bear/resource" />
@@ -52,6 +54,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ray/aop" />
@@ -98,6 +101,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/path-util" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yahiru/entity-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-diactoros" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,8 +1,13 @@
-export const post = async <T>(url: string): Promise<T> => {
+const BASE = 'http://localhost:8080';
+
+export const post = async <T>(url: string, params: object = {}): Promise<T> => {
   return new Promise(resolve => {
-    fetch("http://localhost:8080" + url, {
+    fetch(BASE + url, {
       method: "POST",
-      mode: "cors"
+      body: JSON.stringify(params),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
     })
       .then(response => response.json())
       .then(body => {
@@ -11,9 +16,9 @@ export const post = async <T>(url: string): Promise<T> => {
   });
 };
 
-export const patch = async <T>(url: string, params: object): Promise<T> => {
+export const patch = async <T>(url: string, params: object = {}): Promise<T> => {
   return new Promise(resolve => {
-    fetch("http://localhost:8080" + url, {
+    fetch(BASE + url, {
       method: "PATCH",
       body: JSON.stringify(params),
       headers: {
@@ -32,7 +37,7 @@ export const get = async <T>(url: string, params: object = {}): Promise<T> => {
     const options = Object.assign(params, {
       method: "GET"
     });
-    fetch("http://localhost:8080" + url, options)
+    fetch(BASE + url, options)
       .then(response => response.json())
       .then(body => {
         resolve(body);

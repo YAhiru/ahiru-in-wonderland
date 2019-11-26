@@ -6,7 +6,8 @@
     "require": {
         "php": ">=7.3.0",
         "bear/package": "^1.9",
-        "ray/identity-value-module": "^0.2.0"
+        "ray/identity-value-module": "^0.2.0",
+        "bear/aura-router-module": "^2.0"
     },
     "require-dev": {
         "josegonzalez/dotenv": "^3.2",
