@@ -25,6 +25,7 @@
 phpunit.xml
 /docs/api/
 ../autoload.php
+.php-version
 
 /node_modules
 /.pnp
