@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace App\Resource\App;
 
-use App\Resource\ResourceObject;
+use BEAR\Resource\ResourceObject;
 use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonster;
 use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonsterId;
 use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonsters;

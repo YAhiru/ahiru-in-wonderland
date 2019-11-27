@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace App\Resource\Page;
 
-use App\Resource\ResourceObject;
+use BEAR\Resource\ResourceObject;
 use Koriym\HttpConstants\StatusCode;
 use Wonderland\Domain\Adventure\Model\Gate\GateId;
 use Wonderland\Domain\Adventure\Model\Gate\GateRepository;

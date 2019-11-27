@@ -2,9 +2,9 @@
 declare(strict_types=1);
 namespace App\Resource\Page;
 
-use App\Resource\ResourceObject;
 use BEAR\Package\Annotation\ReturnCreatedResource;
 use BEAR\RepositoryModule\Annotation\Cacheable;
+use BEAR\Resource\ResourceObject;
 use Koriym\HttpConstants\ResponseHeader;
 use Koriym\HttpConstants\StatusCode;
 use Wonderland\Application\UseCase\Battle\Encounter\EncounterInteractor;
