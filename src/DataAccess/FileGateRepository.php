@@ -12,6 +12,11 @@ use Wonderland\Domain\Adventure\Model\Gate\GateRepository;
  */
 class FileGateRepository extends AbstractFileRepository implements GateRepository
 {
+    public function nextId() : GateId
+    {
+        return GateId::of((string) $this->uuid);
+    }
+
     public function create(Gate $gate) : void
     {
         $data = $this->unserialize();

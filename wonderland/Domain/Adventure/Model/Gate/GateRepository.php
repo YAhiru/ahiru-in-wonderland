@@ -7,6 +7,8 @@ namespace Wonderland\Domain\Adventure\Model\Gate;
  */
 interface GateRepository
 {
+    public function nextId() : GateId;
+
     public function create(Gate $gate) : void;
 
     public function update(Gate $gate) : void;

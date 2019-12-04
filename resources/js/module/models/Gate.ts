@@ -15,3 +15,8 @@ export default interface Gate {
   name: string;
   encountableMonsters: EncountableMonster[];
 }
+
+export interface NewGate {
+  name: string;
+  encountableMonsters: EncountableMonster[];
+}

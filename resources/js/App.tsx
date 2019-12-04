@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import BattlePage from "./module/pages/battle";
 import GateEdit from "./module/pages/admin/gate/edit";
+import GateCreate from "./module/pages/admin/gate/create";
 
 const Home = () => (
   <div>
@@ -23,7 +24,10 @@ const App: React.FC = () => {
             <Link to="/battle">battle</Link>
           </li>
           <li>
-            <Link to="/admin/gate/1/edit">gate edit</Link>
+            <Link to="/admin/gates/create">gate create</Link>
+          </li>
+          <li>
+            <Link to="/admin/gates/1/edit">gate edit</Link>
           </li>
         </ul>
 
@@ -31,7 +35,8 @@ const App: React.FC = () => {
 
         <Route exact path="/" component={Home} />
         <Route path="/battle" component={BattlePage} />
-        <Route path="/admin/gate/:id/edit" component={GateEdit} />
+        <Route path="/admin/gates/create" component={GateCreate} />
+        <Route path="/admin/gates/:id/edit" component={GateEdit} />
       </div>
     </BrowserRouter>
   );

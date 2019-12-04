@@ -4,6 +4,8 @@ namespace Test\Resource\Page;
 
 use BEAR\Package\AppInjector;
 use BEAR\Resource\ResourceInterface;
+use BEAR\Resource\ResourceObject;
+use Koriym\HttpConstants\ResponseHeader;
 use PHPUnit\Framework\TestCase;
 use Test\Helper\Factory\Adventure\GateFactory;
 use Wonderland\Domain\Adventure\Model\Gate\GateId;
@@ -25,19 +27,30 @@ final class GateTest extends TestCase
 
     /**
      * @test
-     * @testdox 指定したIDの旅の扉が取得出来る
+     * @testdox 旅の扉を作成できる
      */
-    public function onGet()
+    public function onPost()
     {
-        $gate = GateFactory::start()->make([
-            'id' => GateId::of('1'),
+        $resource = $this->resource->post('page://self/gate', [
+            'name' => 'testing gate',
         ]);
-        $this->gateRepository->create($gate);
-        $resource = $this->resource->get('page://self/gate?id=1');
+
+        $this->assertSame(201, $resource->code);
+
+        return $resource;
+    }
+
+    /**
+     * @test
+     * @testdox 指定したIDの旅の扉が取得出来る
+     * @depends onPost
+     */
+    public function onGet(ResourceObject $ro)
+    {
+        $resource = $this->resource->get('page://self' . $ro->headers[ResponseHeader::LOCATION]);
 
         $this->assertSame(200, $resource->code);
-        $this->assertTrue($gate->getId()->equals(GateId::of($resource->body['id'])));
-        $this->assertSame($gate->getName(), $resource->body['name']);
+        $this->assertSame('testing gate', $resource->body['name']);
         $this->assertIsArray($resource->body['encountableMonsters']);
     }
 
