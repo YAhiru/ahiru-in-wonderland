@@ -40,4 +40,9 @@ class FileGateRepository extends AbstractFileRepository implements GateRepositor
 
         return $gate;
     }
+
+    public function all() : array
+    {
+        return $this->unserialize() ?: [];
+    }
 }

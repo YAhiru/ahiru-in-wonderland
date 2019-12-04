@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import BattlePage from "./module/pages/battle";
 import GateEdit from "./module/pages/admin/gate/edit";
 import GateCreate from "./module/pages/admin/gate/create";
+import GateIndex from "./module/pages/admin/gate";
 
 const Home = () => (
   <div>
@@ -27,16 +28,19 @@ const App: React.FC = () => {
             <Link to="/admin/gates/create">gate create</Link>
           </li>
           <li>
-            <Link to="/admin/gates/1/edit">gate edit</Link>
+            <Link to="/admin/gates">gate index</Link>
           </li>
         </ul>
 
         <hr />
 
-        <Route exact path="/" component={Home} />
-        <Route path="/battle" component={BattlePage} />
-        <Route path="/admin/gates/create" component={GateCreate} />
-        <Route path="/admin/gates/:id/edit" component={GateEdit} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/battle" component={BattlePage} />
+          <Route exact path="/admin/gates" component={GateIndex} />
+          <Route exact path="/admin/gates/:id/edit" component={GateEdit} />
+          <Route exact path="/admin/gates/create" component={GateCreate} />
+        </Switch>
       </div>
     </BrowserRouter>
   );

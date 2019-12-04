@@ -21,4 +21,9 @@ interface GateRepository
      * @return Gate
      */
     public function find(GateId $id) : Gate;
+
+    /**
+     * @return Gate[]
+     */
+    public function all() : array;
 }
