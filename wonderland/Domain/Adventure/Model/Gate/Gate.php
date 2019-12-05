@@ -8,12 +8,9 @@ use Wonderland\Domain\Adventure\Model\Gate\Encountable\EncountableMonsters;
 
 final class Gate
 {
-    /** @var GateId */
-    private $id;
-    /** @var EncountableMonsters */
-    private $encountableMonsters;
-    /** @var string */
-    private $name;
+    private GateId $id;
+    private EncountableMonsters $encountableMonsters;
+    private string $name;
 
     public function __construct(GateId $id, string $name, EncountableMonsters $encountableMonsters)
     {

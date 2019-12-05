@@ -7,14 +7,10 @@ use Wonderland\Domain\Model\Player\PlayerId;
 
 final class Battle
 {
-    /** @var BattleId */
-    private $id;
-    /** @var PlayerId */
-    private $playerId;
-    /** @var Monsters */
-    private $monsters;
-    /** @var Enemies */
-    private $enemies;
+    private BattleId $id;
+    private PlayerId $playerId;
+    private Monsters $monsters;
+    private Enemies $enemies;
 
     public function __construct(BattleId $id, PlayerId $playerId, Monsters $monsters, Enemies $enemies)
     {

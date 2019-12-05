@@ -9,10 +9,8 @@ use Wonderland\Domain\Adventure\Model\Monster\Monsters;
 
 final class Player
 {
-    /** @var PlayerId */
-    private $id;
-    /** @var Monsters */
-    private $monsters;
+    private PlayerId $id;
+    private Monsters $monsters;
 
     public function __construct(PlayerId $id, Monsters $monsters)
     {

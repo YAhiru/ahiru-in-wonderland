@@ -4,8 +4,7 @@ namespace Wonderland\Domain\Model;
 
 abstract class AbstractCollection implements Collection
 {
-    /** @var array */
-    protected $items;
+    protected array $items;
 
     protected function __construct(array $items)
     {

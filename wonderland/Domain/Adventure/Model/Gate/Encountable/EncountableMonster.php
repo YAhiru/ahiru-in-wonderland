@@ -4,14 +4,10 @@ namespace Wonderland\Domain\Adventure\Model\Gate\Encountable;
 
 final class EncountableMonster
 {
-    /** @var EncountableMonsterId */
-    private $id;
-    /** @var string */
-    private $name;
-    /** @var FloorRange */
-    private $floorRange;
-    /** @var LevelRange */
-    private $levelRange;
+    private EncountableMonsterId $id;
+    private string $name;
+    private FloorRange $floorRange;
+    private LevelRange $levelRange;
 
     public function __construct(EncountableMonsterId $id, string $name, FloorRange $floorRange, LevelRange $levelRange)
     {

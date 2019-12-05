@@ -4,16 +4,11 @@ namespace Wonderland\Domain\Adventure\Model\Monster;
 
 final class Monster
 {
-    /** @var MonsterId */
-    private $id;
-    /** @var string */
-    private $name;
-    /** @var Level */
-    private $level;
-    /** @var HitPoint */
-    private $hitPoint;
-    /** @var MagicPoint */
-    private $magicPoint;
+    private MonsterId $id;
+    private string $name;
+    private Level $level;
+    private HitPoint $hitPoint;
+    private MagicPoint $magicPoint;
 
     public function __construct(MonsterId $id, string $name, Level $level, HitPoint $hitPoint, MagicPoint $magicPoint)
     {

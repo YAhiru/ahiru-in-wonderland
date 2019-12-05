@@ -10,14 +10,12 @@ use Wonderland\Domain\Model\Player\PlayerId;
 
 final class BattleBuilder
 {
-    /** @var BattleId */
-    private $battleId;
-    /** @var PlayerId */
-    private $playerId;
+    private BattleId $battleId;
+    private PlayerId $playerId;
     /** @var Monster[] */
-    private $monsters = [];
+    private array $monsters = [];
     /** @var Enemy[] */
-    private $enemies = [];
+    private array $enemies = [];
 
     public function setBattleId($id) : self
     {

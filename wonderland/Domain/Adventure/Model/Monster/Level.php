@@ -6,8 +6,7 @@ use Wonderland\Domain\Model\ConstructException;
 
 final class Level
 {
-    /** @var int */
-    private $value;
+    private int $value;
 
     private function __construct(int $value)
     {

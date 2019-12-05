@@ -7,9 +7,9 @@ use Wonderland\Domain\Adventure\Model\Monster\Level;
 final class Enemy
 {
     /** @var string */
-    private $name;
+    private string $name;
     /** @var Level */
-    private $level;
+    private Level $level;
 
     public function __construct(string $name, Level $level)
     {

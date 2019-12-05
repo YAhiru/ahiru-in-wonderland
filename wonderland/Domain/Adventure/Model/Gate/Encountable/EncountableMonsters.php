@@ -8,7 +8,7 @@ use Wonderland\Domain\Model\AbstractCollection;
 final class EncountableMonsters extends AbstractCollection
 {
     /** @var EncountableMonster[] */
-    protected $items;
+    protected array $items;
 
     public static function make(EncountableMonster ...$monsters)
     {

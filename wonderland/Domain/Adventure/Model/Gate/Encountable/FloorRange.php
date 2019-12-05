@@ -6,10 +6,8 @@ use Wonderland\Domain\Model\ConstructException;
 
 final class FloorRange
 {
-    /** @var int */
-    private $min;
-    /** @var int */
-    private $max;
+    private int $min;
+    private int $max;
 
     private function __construct(int $min, int $max)
     {

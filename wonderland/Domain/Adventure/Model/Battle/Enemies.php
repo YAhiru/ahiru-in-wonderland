@@ -8,7 +8,7 @@ use Wonderland\Domain\Model\ConstructException;
 final class Enemies extends AbstractCollection
 {
     /** @var Enemy[] */
-    protected $items;
+    protected array $items;
 
     public static function create(Enemy ...$enemies) : self
     {

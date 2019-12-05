@@ -6,10 +6,8 @@ use Wonderland\Domain\Model\ConstructException;
 
 final class MagicPoint
 {
-    /** @var int */
-    private $current;
-    /** @var int */
-    private $max;
+    private int $current;
+    private int $max;
 
     private function __construct(int $current, int $max)
     {

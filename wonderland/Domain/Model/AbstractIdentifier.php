@@ -4,8 +4,7 @@ namespace Wonderland\Domain\Model;
 
 abstract class AbstractIdentifier implements Identifier
 {
-    /** @var string */
-    protected $value;
+    protected string $value;
 
     private function __construct(string $value)
     {
