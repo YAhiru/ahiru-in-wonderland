@@ -25,8 +25,8 @@ final class FloorRange
 
     public function isInclude(int $floor) : bool
     {
-        return $this->min <= $floor
-            && $this->max >= $floor;
+        return $this->getMin() <= $floor
+            && $this->getMax() >= $floor;
     }
 
     public function getMin() : int

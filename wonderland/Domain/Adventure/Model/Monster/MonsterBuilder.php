@@ -104,8 +104,8 @@ final class MonsterBuilder
             ->setId($data['monster_id'])
             ->setLevel($data['level'])
             ->setName($data['name'])
-            ->setHitPoint($data['current_hit_point'], $data['max_hit_point'])
-            ->setMagicPoint($data['current_magic_point'], $data['max_magic_point']);
+            ->setHitPoint($data['current_hit_point'], $data['max_hit_point'] ?? null)
+            ->setMagicPoint($data['current_magic_point'], $data['max_magic_point'] ?? null);
 
         return $builder->build();
     }

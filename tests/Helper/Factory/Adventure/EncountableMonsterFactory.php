@@ -33,6 +33,21 @@ final class EncountableMonsterFactory extends AbstractFactory
         return $this;
     }
 
+    /**
+     * @param string|EncountableMonsterId $id
+     *
+     * @return $this
+     */
+    public function id($id) : self
+    {
+        if (! $id instanceof EncountableMonsterId) {
+            $id = EncountableMonsterId::of((string) $id);
+        }
+        $this->addRecipe(['id' => $id]);
+
+        return $this;
+    }
+
     protected function class() : string
     {
         return EncountableMonster::class;

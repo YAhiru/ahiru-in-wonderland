@@ -89,4 +89,14 @@ final class GateTest extends TestCase
         $this->expectExceptionMessage('Enemies must be greater than 1 and smaller than 3. but given 0 enemies.');
         $gate->makeEnemies(1, 0);
     }
+
+    public function testUpdateName()
+    {
+        $gate = GateFactory::start()->make(['name' => 'testing name']);
+
+        $this->assertSame('testing name', $gate->getName());
+
+        $gate->updateName('updated name');
+        $this->assertSame('updated name', $gate->getName());
+    }
 }

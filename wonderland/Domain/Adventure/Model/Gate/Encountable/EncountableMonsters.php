@@ -15,6 +15,13 @@ final class EncountableMonsters extends AbstractCollection
         return new self($monsters);
     }
 
+    /**
+     * @param EncountableMonsterId $id
+     *
+     * @throws EncountableMonsterNotFoundException
+     *
+     * @return Enemy
+     */
     public function createEnemy(EncountableMonsterId $id) : Enemy
     {
         $encountable = $this->search($id);
