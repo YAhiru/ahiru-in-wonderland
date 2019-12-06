@@ -7,10 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class IndexTest extends TestCase
 {
-    /**
-     * @var ResourceInterface
-     */
-    private $resource;
+    private ResourceInterface $resource;
 
     protected function setUp() : void
     {

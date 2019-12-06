@@ -13,10 +13,8 @@ use Wonderland\Domain\Adventure\Model\Gate\GateRepository;
 
 final class GateTest extends TestCase
 {
-    /** @var ResourceInterface */
-    private $resource;
-    /** @var GateRepository */
-    private $gateRepository;
+    private ResourceInterface $resource;
+    private GateRepository $gateRepository;
 
     protected function setUp() : void
     {

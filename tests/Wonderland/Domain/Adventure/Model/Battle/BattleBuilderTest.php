@@ -23,8 +23,8 @@ final class BattleBuilderTest extends TestCase
     public function testFromArray($data)
     {
         $battle = BattleBuilder::fromArray($data);
-        $this->assertTrue($battle->getId()->equals(BattleId::of('battleId')));
-        $this->assertTrue($battle->getPlayerId()->equals(PlayerId::of('playerId')));
+        $this->assertTrue($battle->getId()->equals(BattleId::of('1111')));
+        $this->assertTrue($battle->getPlayerId()->equals(PlayerId::of('2222')));
         $this->assertSame(1, $battle->getMonsters()->count());
         $this->assertSame(2, $battle->getEnemies()->count());
     }
@@ -33,8 +33,8 @@ final class BattleBuilderTest extends TestCase
     {
         yield 'raw values' => [
             [
-                'battle_id' => BattleId::of('battleId'),
-                'player_id' => PlayerId::of('playerId'),
+                'battle_id' => BattleId::of('1111'),
+                'player_id' => PlayerId::of('2222'),
                 'monsters' => [
                     [
                         'monster_id' => 'monsterId',
@@ -49,7 +49,7 @@ final class BattleBuilderTest extends TestCase
                 'enemies' => [
                     [
                         'name' => 'enemy',
-                        'level' => 10,
+                        'level' => '10',
                     ],
                     [
                         'name' => 'enemy2',
@@ -61,8 +61,8 @@ final class BattleBuilderTest extends TestCase
 
         yield 'value objects' => [
             [
-                'battle_id' => 'battleId',
-                'player_id' => 'playerId',
+                'battle_id' => 1111,
+                'player_id' => 2222,
                 'monsters' => [
                     new Monster(
                         MonsterId::of('monsterId'),
