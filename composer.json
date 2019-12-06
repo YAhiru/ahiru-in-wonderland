@@ -12,7 +12,7 @@
     "require-dev": {
         "josegonzalez/dotenv": "^3.2",
         "roave/security-advisories": "dev-master",
-        "infection/infection": "^0.14.2",
+        "infection/infection": "^0.15.0",
         "brainmaestro/composer-git-hooks": "^2.8",
         "codacy/coverage": "dev-master",
         "yahiru/entity-factory": "^2.0",
