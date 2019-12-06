@@ -17,7 +17,7 @@ jobs:
       uses: shivammathur/setup-php@master
       with:
         php-version: 7.4
-        extension-csv: mbstring, pcov, xdebug
+        extension-csv: mbstring, pcov
         coverage: pcov
 
     - name: Check PHP Version

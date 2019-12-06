@@ -25,6 +25,6 @@
     }
   },
   "testFramework":"phpunit",
-  "initialTestsPhpOptions": "-d zend_extension=xdebug.so",
+  "initialTestsPhpOptions": "-dextension=pcov.so -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~(.github|bin|vendor|public|tests|var)~\"",
   "testFrameworkOptions": "-vvv"
 }
