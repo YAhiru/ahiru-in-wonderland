@@ -8,8 +8,7 @@ use Koriym\HttpConstants\ResponseHeader;
 
 final class Header implements HeaderInterface
 {
-    /** @var \BEAR\Sunday\Provide\Transfer\Header */
-    private $header;
+    private \BEAR\Sunday\Provide\Transfer\Header $header;
 
     public function __construct(\BEAR\Sunday\Provide\Transfer\Header $header)
     {
