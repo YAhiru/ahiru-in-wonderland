@@ -16,8 +16,7 @@ use Wonderland\Domain\Adventure\Model\Gate\GateRepository;
 
 class Gate extends ResourceObject
 {
-    /** @var GateRepository */
-    protected $gateRepository;
+    protected GateRepository $gateRepository;
 
     public function __construct(GateRepository $gateRepository)
     {
@@ -37,31 +36,23 @@ class Gate extends ResourceObject
     /**
      * @ReturnCreatedResource
      */
-    public function onPost(string $name)
-    {
+    public function onPost(
+        string $name,
+        array $encountableMonsters
+    ) : ResourceObject {
+        $monsters = array_map(function (int $idx, array $monster) {
+            return new EncountableMonster(
+                EncountableMonsterId::of((string) $idx),
+                $monster['name'],
+                FloorRange::create($monster['floorRange']['min'], $monster['floorRange']['max']),
+                LevelRange::create($monster['levelRange']['min'], $monster['levelRange']['max']),
+            );
+        }, array_keys($encountableMonsters), $encountableMonsters);
+
         $gate = new \Wonderland\Domain\Adventure\Model\Gate\Gate(
             $this->gateRepository->nextId(),
             $name,
-            EncountableMonsters::make(
-                new EncountableMonster(
-                    EncountableMonsterId::of('1'),
-                    'enemy1',
-                    FloorRange::create(1, 10),
-                    LevelRange::create(5, 8)
-                ),
-                new EncountableMonster(
-                    EncountableMonsterId::of('2'),
-                    'enemy2',
-                    FloorRange::create(1, 10),
-                    LevelRange::create(5, 8)
-                ),
-                new EncountableMonster(
-                    EncountableMonsterId::of('3'),
-                    'enemy3',
-                    FloorRange::create(1, 10),
-                    LevelRange::create(5, 8)
-                )
-            )
+            EncountableMonsters::make(...$monsters)
         );
 
         $this->gateRepository->create($gate);
@@ -74,11 +65,21 @@ class Gate extends ResourceObject
 
     public function onPatch(
         string $id,
-        string $name
+        string $name,
+        array $encountableMonsters
     ) : ResourceObject {
         $gate = $this->gateRepository->find(GateId::of($id));
 
-        $gate->updateName($name);
+        $monsters = array_map(function ($monster) {
+            return new EncountableMonster(
+                EncountableMonsterId::of((string) $monster['id']),
+                $monster['name'],
+                FloorRange::create($monster['floorRange']['min'], $monster['floorRange']['max']),
+                LevelRange::create($monster['levelRange']['min'], $monster['levelRange']['max']),
+            );
+        }, $encountableMonsters);
+
+        $gate->update($name, EncountableMonsters::make(...$monsters));
 
         $this->gateRepository->update($gate);
 

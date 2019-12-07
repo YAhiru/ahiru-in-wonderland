@@ -90,13 +90,22 @@ final class GateTest extends TestCase
         $gate->makeEnemies(1, 0);
     }
 
-    public function testUpdateName()
+    public function testUpdate()
     {
-        $gate = GateFactory::start()->make(['name' => 'testing name']);
+        $gate = GateFactory::start()->make([
+            'name' => 'testing name',
+            'encountableMonsters' => EncountableMonsters::make(
+                EncountableMonsterFactory::start()->make()
+            )
+        ]);
 
         $this->assertSame('testing name', $gate->getName());
+        $this->assertSame(1, $gate->countEncountableMonsters());
 
-        $gate->updateName('updated name');
+        $gate->update('updated name', EncountableMonsters::make(
+            ...EncountableMonsterFactory::start()->makeMultiple(3)
+        ));
         $this->assertSame('updated name', $gate->getName());
+        $this->assertSame(3, $gate->countEncountableMonsters());
     }
 }

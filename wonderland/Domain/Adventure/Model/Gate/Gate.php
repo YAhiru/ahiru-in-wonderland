@@ -29,9 +29,10 @@ final class Gate
         return $this->name;
     }
 
-    public function updateName(string $name) : void
+    public function update(string $name, EncountableMonsters $encountableMonsters) : void
     {
         $this->name = $name;
+        $this->encountableMonsters = $encountableMonsters;
     }
 
     public function makeEnemies(int $targetFloor, int $count) : Enemies
@@ -48,6 +49,11 @@ final class Gate
         }
 
         return Enemies::create(...$enemies);
+    }
+
+    public function countEncountableMonsters() : int
+    {
+        return $this->encountableMonsters->count();
     }
 
     /**

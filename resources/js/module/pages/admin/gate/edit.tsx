@@ -24,10 +24,58 @@ const GateEdit: FC<RouteProps> = props => {
         encountableMonsters: gate.encountableMonsters
       });
     });
-  }, []);
+  }, [gateId]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     setState({ ...state, [event.target.name]: event.target.value });
+  };
+
+  const handleChangeMonsterName = (idx: number) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      const newState = Object.assign({}, state);
+      newState.encountableMonsters[idx].name = event.target.value;
+      setState({ ...newState });
+    };
+  };
+
+  const handleChangeMonsterFloorMax = (idx: number) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      const newState = Object.assign({}, state);
+      newState.encountableMonsters[idx].floorRange.max = parseInt(
+        event.target.value
+      );
+      setState({ ...newState });
+    };
+  };
+
+  const handleChangeMonsterFloorMin = (idx: number) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      const newState = Object.assign({}, state);
+      newState.encountableMonsters[idx].floorRange.min = parseInt(
+        event.target.value
+      );
+      setState({ ...newState });
+    };
+  };
+
+  const handleChangeMonsterLevelMax = (idx: number) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      const newState = Object.assign({}, state);
+      newState.encountableMonsters[idx].levelRange.max = parseInt(
+        event.target.value
+      );
+      setState({ ...newState });
+    };
+  };
+
+  const handleChangeMonsterLevelMin = (idx: number) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      const newState = Object.assign({}, state);
+      newState.encountableMonsters[idx].levelRange.min = parseInt(
+        event.target.value
+      );
+      setState({ ...newState });
+    };
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -36,16 +84,56 @@ const GateEdit: FC<RouteProps> = props => {
     update(gate);
   };
 
-  return (
+  const monsterInputBoxStyle = {
+    marginTop: "10px"
+  };
+
+  return state.name ? (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
         name="name"
         value={state.name}
-        onChange={handleChange}
+        onChange={handleChangeName}
       />
+      {state.encountableMonsters.map((m, key) => (
+        <div style={monsterInputBoxStyle} key={key}>
+          {m.name}
+          <br />
+          <input type="hidden" value={m.id} />
+          <input
+            type="text"
+            value={m.name}
+            onChange={handleChangeMonsterName(key)}
+          />
+          <label>Floor </label>
+          <input
+            type="text"
+            value={m.floorRange.min}
+            onChange={handleChangeMonsterFloorMin(key)}
+          />
+          <input
+            type="text"
+            value={m.floorRange.max}
+            onChange={handleChangeMonsterFloorMax(key)}
+          />
+          <label>Level </label>
+          <input
+            type="text"
+            value={m.levelRange.min}
+            onChange={handleChangeMonsterLevelMin(key)}
+          />
+          <input
+            type="text"
+            value={m.levelRange.max}
+            onChange={handleChangeMonsterLevelMax(key)}
+          />
+        </div>
+      ))}
       <input type="submit" />
     </form>
+  ) : (
+    <div>Loading...</div>
   );
 };
 
