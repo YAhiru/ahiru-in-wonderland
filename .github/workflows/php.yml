@@ -48,7 +48,7 @@ jobs:
       run: composer ifc
 
     - name: Run test
-      run: php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude="~(.github|bin|vendor|public|tests|var)~" ./vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage
+      run: php $(./var/scripts/get_php_coverage_options.sh) ./vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage
 
     - name: Send Coverage
       run: php vendor/bin/codacycoverage clover build/coverage

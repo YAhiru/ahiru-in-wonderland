@@ -58,10 +58,7 @@
             "@test"
         ],
         "coverage": [
-            "php -dzend_extension=xdebug.so ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage"
-        ],
-        "coverage:pcov": [
-            "php -dextension=pcov.so -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~(.github|bin|vendor|public|tests|var)~\" ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage"
+            "php $(./var/scripts/get_php_coverage_options.sh) ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage"
         ],
         "md": "phpmd src,wonderland,tests text ./phpmd.xml",
         "cs": [
@@ -72,7 +69,8 @@
             "php-cs-fixer fix -v",
             "phpcbf src wonderland tests"
         ],
-        "ifc": "infection --threads=4 --filter=$(git diff origin/master --diff-filter=AM --name-only | grep -E 'src\/|wonderland\/' | paste -sd \",\" -) --ignore-msi-with-no-mutations --min-msi=80",
+        "ifc": "php $(./var/scripts/get_php_coverage_options.sh) ./vendor/bin/infection --threads=4 --filter=$(git diff origin/master --diff-filter=AM --name-only | grep -E 'src\/|wonderland\/' | paste -sd \",\" -) --ignore-msi-with-no-mutations --min-msi=80",
+        "ifc:all": "php $(./var/scripts/get_php_coverage_options.sh) ./vendor/bin/infection",
         "stan": "phpstan analyse -l max src wonderland tests -c phpstan.neon --no-progress",
         "serve": "php -dzend_extension=xdebug.so -S 127.0.0.1:8080 -t public",
         "app": "php bin/app.php",
