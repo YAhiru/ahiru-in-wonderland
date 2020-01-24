@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/95466758698547fe9c1b8414ac21992a)](https://www.codacy.com/manual/yahiru1121/ahiru-in-wonderland?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YAhiru/ahiru-in-wonderland&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/95466758698547fe9c1b8414ac21992a)](https://www.codacy.com/manual/yahiru1121/ahiru-in-wonderland?utm_source=github.com&utm_medium=referral&utm_content=YAhiru/ahiru-in-wonderland&utm_campaign=Badge_Coverage)
+[![CI Status](https://github.com/YAhiru/ahiru-in-wonderland/workflows/PHP%20Tests/badge.svg)](https://github.com/YAhiru/ahiru-in-wonderland/actions)
+
 
 ## 参考資料
 
